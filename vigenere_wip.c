@@ -20,7 +20,6 @@ char	ft_vigenere(char input[] , char increment[])
 		char a;
 		char b;
 		char c;
-
 		int i;
 		for ( i = 0; i <= len_input ; i++)
 		{
