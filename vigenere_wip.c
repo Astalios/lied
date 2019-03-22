@@ -3,53 +3,33 @@
 #include <stdlib.h>
 #include <unistd.h>
 // le ft_viegenere est simple, on lui injecte deux donnees, le texte en premier, et la valeur de decalage, positive ou negative, il gere les majuscules et les minuscules. 
-
-char	ft_strcpr(char khey[] , int i)
-	{
-		char abc[53]="ABCDEFGHIJKLMOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-		int j=0;
-		int k=0;
-		while (khey[i] != abc[j])
-		{
-			if (k > 26)
-				k = 1;
-			j++;
-			k++;
-		}	
-		return(k); 
-	}
-
+// input : phrase / increment : clef de chiffrage
 char	ft_vigenere(char input[] , char increment[])
 	{
-		int j=0;
-		while ((increment[j] >= 'A' && increment[j] <= 'Z') || (increment[j] >= 'a' && increment[j] <= 'z' ) && increment[j] != '\0')
+		char alphabet[53]="ABCDEFGHIJKLMOPQRSTUVWXYZabcdefghijklmopqrstuvwxyz";
+		int m = strlen(alphabet);
+		
+		int len_input;
+		len_input = strlen(input);
+		
+		char* sortie = malloc(sizeof(char)*strlen(input));
+
+		int len_increment = 0;
+		len_increment = strlen(increment);
+
+		char a;
+		char b;
+		char c;
+
+		int i;
+		for ( i = 0; i <= len_input ; i++)
 		{
-			for (int i = 0; input[i] != '\0'; i++)
-			{
-				if (input[i] >= 'A'  && input[i] <= 'Z')
-				{
-					if (input[i] + increment[j] < 'A')
-						input[i] = input[i] + 25 + increment[j];
-					else if (input[i] + increment[j] > 'Z')
-						input[i] = input[i] - 25 + increment[j];
-					else input[i] = input[i] + increment[j];
-				}
-				else if (input[i] >= 'a' && input[i] <= 'z')
-				{
-					if (input[i] + increment[j] < 'a')
-						input[i] = input[i] + 25 + increment[j];
-					else if (input[i] + increment[j] > 'z')
-						input[i] = input[i] - 25 + increment[j];
-					else input[i] = input[i] + increment[j];
-				}
-			printf("%c", input[i]);
-			j++;
-			if (increment[j] == '\0')
-				j = 0;
-			}
+			itoa(a, input[i], 10);
+			itoa(b, increment[i % len_increment], 10);
+			c = ( a + b) % m; 
+			sortie[i] = (sortie[i-1] + atoi(c));
 		}
-		printf("\n");
-		return(0);
+		printf("%d", sortie);
 	}
 
 // Creating main, protected to avoid segfaults and some basic mis-input ( more than two ) a simplifier, à faire : utiliser les ocmmandes de capture clavier, 
