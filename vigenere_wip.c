@@ -3,51 +3,54 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <ctype.h>
-// A modifier , faire en sorte que ce soit un vrai vigenere, car a + a = m  au lieu de a + a = b 
-char	ft_vigenere(char input[] , char increment[])
-	{
-		int j=0;
-		int i=0;
-		for (int k = 0; increment[k]; k++) 
+
+char vigenere(char* phrase, char* increment)
+	{	
+		char alphabet[27]="abcdefghijklmnopqrstuvwxyz";
+		int i=0, j=0, k=0, l=0;
+		for (int min = 0; increment[min]; min++)
 			{
-			increment[k] = tolower(increment[k]);
+				increment[min] = tolower(increment[min]);
 			}
-		while ((increment[j] >= 'A' && increment[j] <= 'Z') || (increment[j] >= 'a' && increment[j] <= 'z' ) && input[j] != '\0')
+		for (int min = 0; phrase[min]; min++)
+			{
+				phrase[min] = tolower(phrase[min]);
+			}
+		while(phrase[j] != '\0')
 		{
-			for (i = 0; input[i] != '\0'; i++)
+			k = 0;
+			i = 0;
+			if(alphabet[k] != increment[l])
+				while(alphabet[k] != increment[l])
+					{
+						if(i > 26)
+							i = 0;
+						k++;
+						i++;
+					}
+			if (phrase[j] >= 'a' && phrase[j] <= 'z')
 			{
-				if (input[i] >= 'A'  && input[i] <= 'Z')
-				{
-					if (input[i] + increment[j] < 'A')
-						input[i] = (((input[i] + 25 + increment[j]) % 27) + 65);
-					else if (input[i] + increment[j] > 'Z')
-						input[i] = (((input[i] - 25 + increment[j]) % 27) + 65);
-					else input[i] = (((input[i] + increment[j]) % 27) + 65);
-				}
-				else if (input[i] >= 'a' && input[i] <= 'z')
-				{
-					if (input[i] + increment[j] < 'a')
-						input[i] = (((input[i] + 25 +increment[j]) % 27) + 97);
-					else if (input[i] + increment[j] > 'z')
-						input[i] = (((input[i] - 25 + increment[j]) % 27) + 97);
-					input[i] = (((input[i] + increment[j]) % 27) + 97);
-				}
-			printf("%c", input[i]);
-			j++;
-			if (increment[j] == '\0')
-			j = 0;
+				if (phrase[j] + i >'z')
+					phrase[j] = i + phrase[j] - 25;
+				else	phrase[j] = phrase[j] + i;
+				printf("%c", phrase[j]);
+				l++;
+				if(increment[l] == '\0')
+					l = 0;
 			}
-			if (input[i] == '\0')
-				break;
+			else printf("%c", phrase[j]);
+			j++;
 		}
 		printf("\n");
 		return(0);
 	}
-int	main(int argc, char** argv)
+
+
+int main(int argc, char** argv)
 	{
-		if (argc != 3)
-			printf("il faut rentrer deux valeurs \n");
-		else	
-			ft_vigenere(argv[1], argv[2]);
+		if ( argc != 3)
+			printf("il faut renter deux valeurs \n");
+		else 
+			vigenere(argv[1], argv[2]);
 		return(0);
 	}
