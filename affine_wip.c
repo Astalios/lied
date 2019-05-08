@@ -3,30 +3,34 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <ctype.h>
-
+// principe du chiffrage affine : voir wikipedia et le site dcode pour plus d'informations. 
+// le chiffrage affine necessite une phrase, et de deux chiffres, le premier sera le coefficient, et le deuxieme sera l'addition, 
+//la est le principe du chiffrage affine.  
 char affine(char* clef, int chiffre_a, int chiffre_b)
 	{	
 		char alphabet[27]="abcdefghijklmnopqrstuvwxyz";
 		int i=0, j=0, k=0, l=0;
-		for (int min = 0; clef[min]; min++)
+		for (int min = 0; clef[min]; min++) // mise de la chaine de charactere en minuscules afin d'uniformiser la casse de la chaine de char. 
 			{
 				clef[min] = tolower(clef[min]);
 			}
-		if (chiffre_a == 2 || chiffre_a == 3 || chiffre_a == 5 || chiffre_a == 7 || chiffre_a == 11 ||  chiffre_a == 13 || chiffre_a == 17 || chiffre_a == 19 || chiffre_a == 23)
+		if (chiffre_a == 1 || chiffre_a == 3 || chiffre_a == 5 || chiffre_a == 7 || chiffre_a == 11 ||  chiffre_a == 15 || chiffre_a == 17 || chiffre_a == 19 || chiffre_a == 21 || chiffre_a == 23 || chiffre_a == 25) // verification que le chiffre_a est premier avec 26, si il ne l'est pas il retourne une erreur. 
 		{
 		while(clef[j] != '\0')
 		{
 			k = 0;
 			i = 0;
 			if(alphabet[k] != clef[j])
-				while(alphabet[k] != clef[j])
+				while(alphabet[k] != clef[j]) // boucle de comptage de l'alphabet : a = 0 / z = 25 
 					{
 						if(i > 26)
 							i = 0;
 						k++;
 						i++;
 					}
-			i = ((chiffre_a * i) + chiffre_b);
+			i = (chiffre_a * i + chiffre_b); 
+			if (i > 26) 
+				i = i % 26;
 			if (clef[j] >= 'a' && clef[j] <= 'z')
 			{
 				if (clef[j] + i >'z')
@@ -40,7 +44,7 @@ char affine(char* clef, int chiffre_a, int chiffre_b)
 		printf("\n");
 		return(0);
 		}
-		else printf("le Chiffre A doit etre un nombre premier compris entre 2 et 23 pour que le programme fonctionne");
+		else printf("le Chiffre A doit etre un nombre premier avec 26 ( le nombre total de lettres dans l'alphabet francais et anglais, ");
 		return 0;
 	}
 
