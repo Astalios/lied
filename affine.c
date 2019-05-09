@@ -28,14 +28,12 @@ char affine(char* clef, int chiffre_a, int chiffre_b)
 						k++;
 						i++;
 					}
-			i = (chiffre_a * i + chiffre_b); 
-			if (i > 26) 
-				i = i % 26;
+			l = ((chiffre_a * i + chiffre_b) % 26) + 'a'; 
 			if (clef[j] >= 'a' && clef[j] <= 'z')
 			{
-				if (clef[j] + i >'z')
-					clef[j] = i + clef[j] - 25;
-				else	clef[j] = clef[j] + i;
+				if (l >'z')
+					clef[j] = l - 25;
+				else clef[j] = l;
 				printf("%c", clef[j]);
 			}
 			else printf("%c", clef[j]);
