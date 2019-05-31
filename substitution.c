@@ -28,18 +28,24 @@ char substitution (char cipher[], char key1[27], char key2[27], char decipher[])
 int main(int argc, char *argv[])
   {
 
-		if(argc != 4)
+		if(argc = 3)
 			{
-				printf("Wrong input\n");
-				return 0;
+    		char output[strlen(argv[1])+1];
+    		substitution(argv[1], argv[2], "abcdefghijklmnopqrstuvwxyz", output);
+    		printf("%s\n", output);
+    		return 0;
 			}
-		else
+		else if(argc = 4)
 			{
     		char output[strlen(argv[1])+1];
     		substitution(argv[1], argv[2], argv[3], output);
     		printf("%s\n", output);
     		return 0;
     	}
+    else
+    	{
+				printf("Wrong input !\n");
+				return 1;
+    	}
 
   }
-
