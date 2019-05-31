@@ -6,6 +6,7 @@
 
 int main(int argc, char *argv[])
 	{
+		if(
     switch(argv[2])
       {
         case 'freq' : /*~Done*/
