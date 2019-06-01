@@ -18,14 +18,16 @@ char atbash(char cipher[], char key[27], char decipher[])
 								decipher[a] = key[len - b - 1];
 								c = 1;
 							}
-						if (cipher[a] < 'a' || cipher[a] > 'z' || c == 0)
+						else if(tolower(cipher[a]) == key[b])
 							{
-								decipher[a] = cipher[a];
+								decipher[a] = toupper(key[len - b - 1]);
+								c = 1;
 							}
-						/*if (tolower(cipher[a]) == key[b])
-							{
-								decipher[a] == toupper(key[b]);
-							}*/
+					}
+				if ((cipher[a] < 'a' || cipher[a] > 'z') && c == 0)
+					{
+						decipher[a] = cipher[a];
+						c = 1;
 					}
 			}
 		decipher[a] = '\0';

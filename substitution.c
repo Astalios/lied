@@ -15,15 +15,18 @@ char substitution (char cipher[], char key1[27], char key2[27], char decipher[])
             if(cipher[a] == key1[b])
               {
                 decipher[a] = key2[b];
+                c = 1;
               }
-             if(cipher[a] < 'a' || cipher[a] > 'z' || c == 0)
+             else if(tolower(cipher[a]) == key1[b])
              	{
-             		decipher[a] = cipher[a];
+             		decipher[a] = toupper(key2[b]);
+             		c = 1;
              	}
-            /*else if(tolower(cipher[a]) == key1[b])
-            	{
-								decipher[a] == toupper(key2[b]);
-            	}*/
+          }
+        if(cipher[a] < 'a' || cipher[a] > 'z' || c == 0)
+          {
+             		decipher[a] = cipher[a];
+             		c = 1;
           }
       }
     decipher[a] = '\0';
