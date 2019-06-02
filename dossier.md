@@ -43,7 +43,16 @@ Nous pourrions améliorer notre programme en implémentant d’autres méthodes 
 
 - Chiffre de Vigenère :
 
+	Le Chiffrement de Blaise Vigenère fonctionne de manière plus élaborée qu'un chiffrement par substitution ou qu'un chiffrement César. La clef est une chaîne de caractères, et on additionne la valeur position de la lettre a chiffrer avec la lettre de la clé, et on avance jusqu'à la fin de la chaîne de caractères a chiffrer, on répéteras souvent plusieurs fois la clé de chiffrage jusqu'au bout.
 
+	Exemple : 
+	```
+	phrase:		Vigenere
+	cle:		cleclecl
+	resultat:	xtkgyitp
+
+	```
+	L'utilisation d'une analyse fréquentielle sur le résultat en sera difficile vu la particularité du chiffrage a donner plusieurs réponses différentes pour une lettre à codée donnée.
 
 - Atbash :
 
@@ -56,7 +65,18 @@ Nous pourrions améliorer notre programme en implémentant d’autres méthodes 
 
 - Chiffrement affine :
 
+	Le principe du chiffrage Affine est d'appliquer une fonction affine  **f(x) = m\*x+p** en commençant donc par A en position 0 et Z en position 25, et donc x est une valeur comprise entre 0 et 25. Par exemple on cherche a encoder le mot 'affine', avec comme valeur m = 3 et p = 5, bien sûr si la valeur dépasse largement 25, on applique un modulo 26 sur le résultat obtenu et le résultat obtenu sera la lettre qui correspond a cette valeur de position.
+	Seulement, il faut que la valeur du chiffre qui se multiplie à 'x' soit égale a une des valeures premières a 26 sinon on se retrouverais avec des chiffrages de lettre qui donneraient la même lettre, donc le message perdrait de son intérêt vu qu'il devient complètement faux.
+ 
+	Exemple avec les deux premières lettres
+	```
+	Mot / Phrase : Affine
+	Position de 'A' dans l'alphabet : 0
+	Position de 'F' dans l'alphabet : 5 
 
+	f(a) = 3*0+5 = 5 = lettre'f'
+	f(f) = 3*5+5 = 20 = lettre 'u'
+	```
 
 - Carré de polybe :
 
@@ -68,7 +88,18 @@ Nous pourrions améliorer notre programme en implémentant d’autres méthodes 
 
 - Conversions :
 
-## 3. Code commenté
+## 3. Objectifs, les choses qui fonctionnent, et d'autre non, où sont donc les limites ?
+
+- Objectifs :
+
+	Les objets dans le projet LiED sont tous fonctionnels pour la majorité des cas, soit non fonctionnels pour une limitation technique du language. 
+	Ce qui fonctionne pleinement sont donc les programme de (dé)chiffrage, vu qu'ils sont le point central de notre projet, si ils n'étaient pas fonctionnels, celà s'avérerais problématique. 
+	La fonction du programme est donc simple, et remplie : elle chiffre et elle déchiffre ce qu'on lui demande, la liste étant proposée ci dessus.
+
+- Limites et échecs :
+
+	Néamoins ce qui ne fonctionne pas pour des raisons techniques dues aux utilisations de fonctions telles que la fonction **scanf** qui limite par exemple la prise de mots par le clavier a un seul mot et se bloque dès que cette fonction rencontre ce qu'on appelle un WhiteSpace, c'est a dire littéralement, un espace blanc, un espace blanc est un espace où il n y a aucun caractère visible, telle que l'espace ' ', la tabulation '	' et le retour à la ligne. 
+	L'une des limites majeures dans la conception de notre petit programme et de notre projet sont souvent le temps parce qu'obligé de se dévouer à d'autres matières, et surtout a nos connaissances, bien souvent dans le language de programmation en question.
 
 ## Conclusion Thomas
 
