@@ -1,6 +1,6 @@
-#LIED Is Encrypting Decrypting
+# LIED Is Encrypting Decrypting
 
-##1. Présentation du projet
+## 1. Présentation du projet
 
 Notre objectif était de créer une boite à outils pour faciliter la résolution d’énigmes. Pour cela, nous voulions créer un ensemble de programmes permettant de crypter et décrypter du texte. Nous avons donc sélectionné un ensemble de chiffrements simples communs qui sont fréquemment utilisés dans des énigmes et les avons transcrits en programmes.
 
@@ -16,9 +16,9 @@ Notre programme est sous licence libre (licence MIT), car nous sommes tous deux 
 
 Nous pourrions améliorer notre programme en implémentant d’autres méthodes de chiffrement, et en polissant l’implémentation des codes déjà implémentés. Nous aurions par exemple aimé pouvoir implémenter Enigma, mais nous n’avons pas eu le temps et cela aurait sans doute été très difficile.
 
-##2. Les différents programmes
+## 2. Les différents programmes
 
--Substitution :
+- Substitution :
 
 	Le chiffrement par constitution consiste à remplacer systématiquement dans un texte un signe donné par un autre signe. On utilise donc deux clés de même taille, et on remplace dans le texte les caractères d'une clé par leur équivalent de l'autre clé. Le code peut ensuit être décodé soit en réappliquant la clé, soit par analyse fréquentielle.
 
@@ -27,15 +27,15 @@ Nous pourrions améliorer notre programme en implémentant d’autres méthodes 
 	tbjkndfgaicvyopwsxqmhzleru
 	```
 
--Code César:
+- Code César:
 
 	Le code César consiste à remplacer les caractères selon un décallage dans une chaine. On assigna à chaque caractère un chiffre, puis on additionne ou soustrait une constante à chaque caractère du texte. Le code peut être décodé en appliquant l'opposé de la constante, que se retrouve facilement par analyse de fréquence.
 
--Chiffre de Vigenère :
+- Chiffre de Vigenère :
 
 
 
--Atbash :
+- Atbash :
 
 	L'atbash consiste à remplacer chaque caractère d'un texte par son opposé dans une chaine. Par exemple, pour l'alphabet, on a a -> z, b -> y, etc..
 
@@ -44,15 +44,15 @@ Nous pourrions améliorer notre programme en implémentant d’autres méthodes 
 	zyxwvutsrqponmlkjihgfedcba
 	```
 
--Chiffrement affine :
+- Chiffrement affine :
 
 
 
--Carré de polybe :
+- Carré de polybe :
 
 
 
--Analyse fréquentielle :
+- Analyse fréquentielle :
 
 	L'analyse fréquentielle consiste à déterminer la fréquence d'apparition de chaque caractère dans un texte. Elle permet, en connaissant les fréquences d'apparition de chaque lettre d0ans la langue supposée du texte, de facilement décoder un texte codé par un code simple si le texte est assez long.
 
@@ -60,5 +60,5 @@ Nous pourrions améliorer notre programme en implémentant d’autres méthodes 
 
 -Conversions :
 
-##3. Code commenté
+## 3. Code commenté
 
