@@ -6,7 +6,7 @@
 // principe du chiffrage affine : voir wikipedia et le site dcode pour plus d'informations. 
 // le chiffrage affine necessite une phrase, et de deux chiffres, le premier sera le coefficient, et le deuxieme sera l'addition, 
 //la est le principe du chiffrage affine.  
-char affine(char* clef, int chiffre_a, int chiffre_b)
+char ft_affine(char* clef, int chiffre_a, int chiffre_b)
 	{	
 		char alphabet[27]="abcdefghijklmnopqrstuvwxyz";
 		int i=0, j=0, k=0, l=0;
@@ -45,13 +45,3 @@ char affine(char* clef, int chiffre_a, int chiffre_b)
 		else printf("le Chiffre A doit etre un nombre premier avec 26 ( le nombre total de lettres dans l'alphabet francais et anglais, ");
 		return 0;
 	}
-
-int main(int argc, char** argv)
-	{
-		if ( argc != 4)
-			printf("il faut rentrer trois valeurs, la clef, le nombre 1, et le nombre 2, \n");
-		else 
-			affine(argv[1], atoi(argv[2]), atoi(argv[3]));
-		return(0);
-	}
-
