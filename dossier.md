@@ -1,18 +1,28 @@
 # LIED Is Encrypting Decrypting
 
+https://github.com/Astalios/lied
+
 ## 1. Présentation du projet
 
-Notre objectif était de créer une boite à outils pour faciliter la résolution d’énigmes. Pour cela, nous voulions créer un ensemble de programmes permettant de crypter et décrypter du texte. Nous avons donc sélectionné un ensemble de chiffrements simples communs qui sont fréquemment utilisés dans des énigmes et les avons transcrits en programmes.
+Notre objectif était de créer une boite à outils pour faciliter la résolution d’énigmes, notament des ARGs (Alternate Reality Game). Pour cela, nous voulions créer un ensemble de programmes permettant de crypter et décrypter du texte, le décodage de massages étant un grand classique des jeux d'énigmes. Nous avons donc sélectionné un ensemble de chiffrements simples et communs qui sont fréquemment utilisés dans des énigmes et les avons transcrits en programmes.
 
-Nous avons tout d’abord hésité entre le C et le python pour écrire notre programme,les deux langages semblant adaptés, et Simon ayant des bases en C, et Thomas en python. Au final, nous avons opté pour le C car nous voulions apprendre le langage.
 
-Notre programme étant à la base une bibliothèque de programmes plus petits, nous nous sommes organisé en se répartissant les codes à implanter. 
-Notre code est organisé en sous programmes pour chaque codage, reliés entre eux par un main commun.
-Nous avons utilisé git pour organiser travail.
+Pour le choix du language, nous avons tout d’abord hésité entre le C et le python pour écrire notre programme,les deux langages semblant adaptés, et Simon ayant des bases en C, et Thomas en python. Notre projet impliquait de faire de la programmation impérative, donc les deux languages étaient envisageables.
+Le C est plus difficile à prendre en main, étant un language de bas niveau, mais le fait qu'il soit un language compilé en rends l'exécution plus rapide (ce qui n'a pas beaucoups d'importance au vu de la taille du projet). Au contraire, le python est plus facile à prendre en main étant un language de haut niveau, ce qui permet d'être plus productif, mais est plus lent étant un language interprété.
+Au final, nous avons opté pour le C car Simon le maitrisait déjà et voulait s'améliorer, et Thomas voulait l'apprendre.
+
+
+Notre programme étant à la base une bibliothèque de programmes plus petits, nous nous sommes organisé en se répartissant les différents chiffrements et outils à implanter. Notre code est organisé en sous programmes pour chaque outil, reliés entre eux par un main commun.
+Pour organiser notre travail, nous avons décidé d'utiliser le logiciel de gestion de version git (et plus précisemment github), ce qui nous a permi de facilement travailler chacun de notre côté, sans avoir à constament s'échanger le code écrit par mail ou par clé usb.
+
+
+Notre programme est sous license libre (license MIT), car nous sommes tous deux des adeptes du logiciel libre, et que notre code étant disponible sur internet, il nous semblait évident de le distribuer librement, afin que n'importe qui puisse l'utiliser, l'adapter à ses besoins, et le redistribuer librement. Un autre avantage est que si quelqu'un de plus expérimenté que nous s'intéresse à notre programme, il pourra nous aider à l'améliorer.
+De plus, même si il semble peu probable que cela arrive, c'est avant tout une question de principe, en effet, nous pensons qu'il n'est pas acceptable de distribuer du code propriétaire, car l'utilisateur n'a aucun moyen de savoir ce que le programme fait, et doit donc entièrement faire confiance au créateur du programme qui peut exécuter du code malicieux à son insu. C'est impossible avec un logiciel libre, tout le monde pouvant étudier le code pour en déterminer le fonctionnement.
+Enfin, nous pensons que les logiciels (et les outils en général), doivent être libres, 
+
 
 Nous avons rencontré plusieurs problèmes. Tout d’abord, il a fallu que Thomas apprenne le C, puisqu’il ne connaissait pas le langage. Ensuite, certains codes ont été compliqués à implémenter car ils demandaient un niveau en maths que nous n’avons pas.
 
-Notre programme est sous licence libre (licence MIT), car nous sommes tous deux des adeptes du logiciel libre, et que notre code étant disponible sur internet, il nous semblait évident de le distribuer sous licence libre.
 
 Nous pourrions améliorer notre programme en implémentant d’autres méthodes de chiffrement, et en polissant l’implémentation des codes déjà implémentés. Nous aurions par exemple aimé pouvoir implémenter Enigma, mais nous n’avons pas eu le temps et cela aurait sans doute été très difficile.
 
@@ -56,9 +66,7 @@ Nous pourrions améliorer notre programme en implémentant d’autres méthodes 
 
 	L'analyse fréquentielle consiste à déterminer la fréquence d'apparition de chaque caractère dans un texte. Elle permet, en connaissant les fréquences d'apparition de chaque lettre d0ans la langue supposée du texte, de facilement décoder un texte codé par un code simple si le texte est assez long.
 
--Morse :
-
--Conversions :
+- Conversions :
 
 ## 3. Code commenté
 
