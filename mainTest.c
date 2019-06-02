@@ -14,7 +14,7 @@ int main (int argc, char** argv)
 	char* 	phrase = malloc(sizeof(&phrase + 2) * 256);
 	char*	phrase_vigenere = malloc(sizeof(&phrase_vigenere + 2) * 256); 
 	int 	choix, clef_chiffre_1 = 0, clef_chiffre_2 = 0;
-	printf("Bievenue sur LiED, le but de ce programme est de chiffrer, et de déchiffrer un mot, une phrase, voire plusieurs. \n La liste des chiffrages sont : \n [1] Le Chiffrage César \n [2] Le Chiffrage de Vigenère \n [3] Le Chiffrage Affine \n [4] Le Chiffrage par Substitution \n [5] Le Chiffrage Atbash \n [6] Le Carré de Polybe \n [7] Le Chiffrage Morse \n [8] Les conversions \n	Il y a également : \n [9] Analyse Fréquentielle \n ");
+	printf("Bievenue sur LiED, le but de ce programme est de chiffrer, et de déchiffrer un mot, une phrase, voire plusieurs. \n La liste des chiffrages sont : \n [1] Le Chiffrage César \n [2] Le Chiffrage de Vigenère \n [3] Le Chiffrage Affine \n [4] Le Chiffrage par Substitution \n [5] Le Chiffrage Atbash \n [6] Le Carré de Polybe \n [7] Les conversions \n	Il y a également : \n [8] Analyse Fréquentielle \n ");
 	sleep(1);
 	printf("\nVeuillez choisir une méthode de chiffrage ou lancer l'analyse fréquentielle : ");
 	scanf("%d", &choix); 
@@ -84,8 +84,6 @@ int main (int argc, char** argv)
 			case 7 : 
 
 			case 8 : 
-
-			case 9 : 
 
 			default :
 				printf("non");
