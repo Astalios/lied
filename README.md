@@ -26,8 +26,8 @@ Liste of tools :
 - Affine cipher
 - Atbash
 - Vigenère cipher
-- Polybius square
-- Conversions
+- Polybius square - *WIP*
+- Conversions - *not done yet*
 - Frequency analysis
 
 LIED is a highschool project for Astalios and naeya final exam. It's our first C project, and one of the objectives was to learn the usage of the tools needed to realise the project.
