@@ -18,7 +18,7 @@ LIED est un projet pour le baccalauréat d'Astalios et naeya. C'est notre premie
 
 ---
 
-LIED is a library of programms allowing to crypt and decrypt messages following simple methods. The goal was to have a toolbox to help solving 
+LIED is a library of programms allowing to crypt and decrypt messages following simple methods. The goal was to have a toolbox to help solving enigmas (for ARGs or geocaching for example).
 
 Liste of tools :
 - Caesar cipher
