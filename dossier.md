@@ -31,17 +31,27 @@ Nous pourrions améliorer notre programme en implémentant d’autres méthodes 
 
 - Substitution :
 
-	Le chiffrement par substitution consiste à remplacer systématiquement dans un texte un signe donné par un autre signe. On utilise donc deux clés de même taille, et on remplace dans le texte les caractères d'une clé par leur équivalent de l'autre clé. Le code peut ensuit être décodé soit en réappliquant la clé, soit par analyse fréquentielle.
+	Le chiffrement par substitution consiste à remplacer systématiquement dans un texte un signe donné par un autre signe. On utilise donc deux clés de même taille, et on remplace dans le texte les caractères d'une clé par leur équivalent de l'autre clé. 
 
+	Exemple :
 	```
 	abcdefghijklmnopqrstuvwxyz
 	tbjkndfgaicvyopwsxqmhzleru
 	```
+	
+	Le code peut ensuit être décodé soit en réappliquant la clé, soit par cryptanalyse fréquentielle.
 
 - Code César:
 
-	Le code César consiste à remplacer les caractères selon un décallage dans une chaine. On assigna à chaque caractère un chiffre, puis on additionne ou soustrait une constante à chaque caractère du texte. Le code peut être décodé en appliquant l'opposé de la constante, que se retrouve facilement par analyse de fréquence.
-
+	Le code César consiste à remplacer les caractères selon un décallage dans une chaine. On assigna à chaque caractère un chiffre, puis on additionne ou soustrait une constante à chaque caractère du texte. 
+	
+	Exemple avec +3 :
+	```
+	abcdefghijklmnopqrstuvwxyz
+	xyzabcdefghijklmnopqrstuvw
+	```
+	
+	Le code peut être décodé en appliquant l'opposé de la constante, que se retrouve facilement par analyse de fréquence.
 
 - Chiffre de Vigenère :
 
@@ -61,17 +71,20 @@ Nous pourrions améliorer notre programme en implémentant d’autres méthodes 
 
 	L'atbash consiste à remplacer chaque caractère d'un texte par son opposé dans une chaine. Par exemple, pour l'alphabet, on a a -> z, b -> y, etc..
 
+	Exemple :
 	```
 	abcdefghijklmnopqrstuvwxyz
 	zyxwvutsrqponmlkjihgfedcba
 	```
+	
+	Etant donné que l'atbash est basiquement un chiffrement par substitution, il est tout aussi simple à cryptanalyser.
 
 - Chiffrement affine :
 
 	Le principe du chiffrage Affine est d'appliquer une fonction affine  **f(x) = m\*x+p** en commençant donc par A en position 0 et Z en position 25, et donc x est une valeur comprise entre 0 et 25. Par exemple on cherche a encoder le mot 'affine', avec comme valeur m = 3 et p = 5, bien sûr si la valeur dépasse largement 25, on applique un modulo 26 sur le résultat obtenu et le résultat obtenu sera la lettre qui correspond a cette valeur de position.
 	Seulement, il faut que la valeur du chiffre qui se multiplie à 'x' soit égale a une des valeures premières a 26 sinon on se retrouverais avec des chiffrages de lettre qui donneraient la même lettre, donc le message perdrait de son intérêt vu qu'il devient complètement faux.
  
-	Exemple avec les deux premières lettres
+	Exemple avec les deux premières lettres :
 	```
 	Mot / Phrase : Affine
 	Position de 'A' dans l'alphabet : 0
@@ -81,30 +94,32 @@ Nous pourrions améliorer notre programme en implémentant d’autres méthodes 
 	f(f) = 3*5+5 = 20 = lettre 'u'
 	```
 
-- Carré de polybe :
+- Carré de Polybe :
 
 
 
 - Analyse fréquentielle :
 
-	L'analyse fréquentielle consiste à déterminer la fréquence d'apparition de chaque caractère dans un texte. Elle permet, en connaissant les fréquences d'apparition de chaque lettre d0ans la langue supposée du texte, de facilement décoder un texte codé par un code simple si le texte est assez long.
+	L'analyse fréquentielle consiste à déterminer la fréquence d'apparition de chaque caractère dans un texte. Elle permet, en connaissant les fréquences d'apparition de chaque lettre dans la langue supposée du texte, de facilement décoder un texte codé par un code simple si le texte est assez long.
 
 
 - Conversions :
+	
+	Programme permettant de réaliser diverses conversions pouvant se révéler utiles, notament entre le binaire, l'héxadécimal et le décimal, et entre les valeurs numériques et l'ASCII. Ce programme n'est pas encore fait.
 
 
 ## 3. Objectifs, les choses qui fonctionnent, et d'autre non, où sont donc les limites ?
 
-- Objectifs :
+#### Objectifs :
 
-	Les objets dans le projet LiED sont tous fonctionnels pour la majorité des cas, soit non fonctionnels pour une limitation technique du language. 
-	Ce qui fonctionne pleinement sont donc les programme de (dé)chiffrage, vu qu'ils sont le point central de notre projet, si ils n'étaient pas fonctionnels, celà s'avérerais problématique. 
-	La fonction du programme est donc simple, et remplie : elle chiffre et elle déchiffre ce qu'on lui demande, la liste étant proposée ci dessus.
+Les objets dans le projet LiED sont tous fonctionnels pour la majorité des cas, soit non fonctionnels pour une limitation technique du language. 
+Ce qui fonctionne pleinement sont donc les programme de (dé)chiffrage, vu qu'ils sont le point central de notre projet, si ils n'étaient pas fonctionnels, celà s'avérerais problématique. 
+La fonction du programme est donc simple, et remplie : elle chiffre et elle déchiffre ce qu'on lui demande, la liste étant proposée ci dessus.
 
-- Limites et échecs :
+#### Limites et échecs :
 
-	Néamoins ce qui ne fonctionne pas pour des raisons techniques dues aux utilisations de fonctions telles que la fonction **scanf** qui limite par exemple la prise de mots par le clavier a un seul mot et se bloque dès que cette fonction rencontre ce qu'on appelle un WhiteSpace, c'est a dire littéralement, un espace blanc, un espace blanc est un espace où il n y a aucun caractère visible, telle que l'espace ' ', la tabulation '	' et le retour à la ligne. 
-	L'une des limites majeures dans la conception de notre petit programme et de notre projet sont souvent le temps parce qu'obligé de se dévouer à d'autres matières, et surtout a nos connaissances, bien souvent dans le language de programmation en question.
+Néamoins ce qui ne fonctionne pas pour des raisons techniques dues aux utilisations de fonctions telles que la fonction **scanf** qui limite par exemple la prise de mots par le clavier a un seul mot et se bloque dès que cette fonction rencontre ce qu'on appelle un WhiteSpace, c'est a dire littéralement, un espace blanc, un espace blanc est un espace où il n y a aucun caractère visible, telle que l'espace ' ', la tabulation '	' et le retour à la ligne. 
+L'une des limites majeures dans la conception de notre petit programme et de notre projet sont souvent le temps parce qu'obligé de se dévouer à d'autres matières, et surtout a nos connaissances, bien souvent dans le language de programmation en question.
 
 
 ## Conclusion Thomas
