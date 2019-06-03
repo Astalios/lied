@@ -2,6 +2,8 @@
 
 ### LIED Is Encrypting Decrypting
 
+![screen](lied.png)
+
 LIED est une librairie de programmes permettant de crypter et décrypter des messages selon des méthodes simples. L'objectif est d'avoir à disposition une boite à outils pour résoudre des énigmes (pour des ARGs ou du geocaching par exemple). 
 
 Liste des outils :
