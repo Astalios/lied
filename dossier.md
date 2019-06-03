@@ -2,6 +2,8 @@
 
 https://github.com/Astalios/lied
 
+![screen](lied.png)
+
 ## 1. Présentation du projet
 
 Notre objectif était de créer une boite à outils pour faciliter la résolution d’énigmes, notament des ARGs (Alternate Reality Game). Pour cela, nous voulions créer un ensemble de programmes permettant de chiffrer et déchiffrer du texte, le décodage de massages étant un grand classique des jeux d'énigmes. Nous avons donc sélectionné un ensemble de chiffrements simples et communs qui sont fréquemment utilisés dans des énigmes et les avons transcrits en programmes.
@@ -18,13 +20,13 @@ Pour organiser notre travail, nous avons décidé d'utiliser le logiciel de gest
 
 Notre programme est sous license libre (license MIT), car nous sommes tous deux des adeptes du logiciel libre, et que notre code étant disponible sur internet, il nous semblait évident de le distribuer librement, afin que n'importe qui puisse l'utiliser, l'adapter à ses besoins, et le redistribuer librement. Un autre avantage est que si quelqu'un de plus expérimenté que nous s'intéresse à notre programme, il pourra nous aider à l'améliorer.
 De plus, même si il semble peu probable que cela arrive, c'est avant tout une question de principe, en effet, nous pensons qu'il n'est pas acceptable de distribuer du code propriétaire, car l'utilisateur n'a aucun moyen de savoir ce que le programme fait, et doit donc entièrement faire confiance au créateur du programme qui peut exécuter du code malicieux à son insu. C'est impossible avec un logiciel libre, tout le monde pouvant étudier le code pour en déterminer le fonctionnement.
-Enfin, nous pensons que les logiciels (et les outils en général), doivent être libres, 
+Enfin, nous pensons que les logiciels (et les technologies en général) doivent être libres, pour que chacun puisse s'en servir sans contrainte, quelle que soit sa situation.
 
 
-Nous avons rencontré plusieurs problèmes. Tout d’abord, il a fallu que Thomas apprenne le C, puisqu’il ne connaissait pas le langage. Ensuite, certains codes ont été compliqués à implémenter car ils demandaient un niveau en maths que nous n’avons pas.
+Nous avons rencontré plusieurs problèmes au cours. Tout d’abord, il a fallu que Thomas apprenne le C, puisqu’il ne connaissait pas le langage, ce qui a pris un certain temps, notamment pour apprendre à gérer la mémoire. Ensuite, certains chiffrements ont été compliqués à implémenter car ils demandaient un niveau en mathématiques que nous n’avons pas (la chiffrement affine par exemple, qui est au programme de spé maths il me semble). 
 
 
-Nous pourrions améliorer notre programme en implémentant d’autres méthodes de chiffrement, et en polissant l’implémentation des codes déjà implémentés. Nous aurions par exemple aimé pouvoir implémenter Enigma, mais nous n’avons pas eu le temps et cela aurait sans doute été très difficile.
+Il y a encore beaucoup de choses que nous pouvons faire pour améliorer LIED. Nous pourrions tout d'abbord implémenter d’autres méthodes de chiffrement, et en polir l’implémentation de celles déjà implémentées. Nous aurions de plus aimé pouvoir implémenter Enigma, mais nous n’avons pas eu le temps et cela aurait sans doute été très difficile. Nous aurions également voulu pouvoir gérer les entrées et sorti dans des fichiers, ce que nous n'avons pas pû faire manque de temps et de connaissances.
 
 
 ## 2. Les différents programmes
@@ -96,7 +98,18 @@ Nous pourrions améliorer notre programme en implémentant d’autres méthodes 
 
 - Carré de Polybe :
 
-
+	Le carré de polybe est un chiffrement qui attribue à chaque lettre une paire de chiffres correspondant à ses coordonnées dans un tableau. Le tableau par défaut est un tableau de 5 par 5 comprenant l'alphabet en fusionnant i et j, mais on peut aussi utiliser un tableau plus grands comprenant les chiffres, les symboles...
+	
+	Exemple pour 23 :
+	
+	|   |1  |2  |3  |4  |5  |
+	|---|---|---|---|---|---|
+	|**1**  |a  |b  |c  |d  |e  |
+	|**2**  |f  |g  |h  |i  |k  |
+	|**3**  |l  |***m***|n  |o  |p  |
+	|**4**  |q  |r  |s  |t  |u  |
+	|**5**  |v  |w  |x  |y  |z  |
+	
 
 - Analyse fréquentielle :
 
