@@ -20,9 +20,26 @@ int polybiusDecrypt(char input[], char output[])
 
 int main(int argc, char *argv[])
 	{
-		char output[strlen(argv[1]+1)];
-		polybiusDecrypt(argv[1], output);
-		printf("%s\n", output);
-		return 0;
+		int a, b=0;
+		for (a=0; argv[1][a] != '\0'; a++)
+			{
+				if (('1' > argv[1][a] || argv[1][a] > '5') && argv[1][a] != ' ')
+					{
+						b = 1;
+					}
+			}
+
+		if (argc == 2 && b == 0)
+			{
+				char output[strlen(argv[1]+1)];
+				polybiusDecrypt(argv[1], output);
+				printf("%s\n", output);
+				return 0;
+			}
+		else
+			{
+				printf("Wrong input !\n");
+				return 1;
+			}
 	}
 
