@@ -29,8 +29,8 @@ char ft_affine(char* clef, int chiffre_a, int chiffre_b)
 						i++;
 					}
 			l = ((chiffre_a * i + chiffre_b) % 26) + 'a'; 
-			if (clef[j] >= 'a' && clef[j] <= 'z')
-			{
+			if (clef[j] >= 'a' && clef[j] <= 'z') 	/* application du chiffrage, et affichage de la lettre ensuite*/
+			{					/*vérification tout de même que le caractère doit se faire chiffrer sinon next.*/
 				if (l >'z')
 					clef[j] = l - 25;
 				else clef[j] = l;
@@ -45,7 +45,7 @@ char ft_affine(char* clef, int chiffre_a, int chiffre_b)
 		else printf("le Chiffre A doit etre un nombre premier avec 26 ( le nombre total de lettres dans l'alphabet francais et anglais, ");
 		return (0);
 	}
-
+/* faible sécurisation du main, truc rapide pour compenser le mainLied défectueux.*/
 int main(int argc, char** argv)
 		{
 		if ( argc != 4)

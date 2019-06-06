@@ -11,10 +11,10 @@ char ft_cesar(char* input, int increment)
 		increment = increment %= 26;
 	for (int i = 0; input[i] != '\0'; i++)
 	{
-		if (input[i] >= 'A'  && input[i] <= 'Z')
-		{
-			if (input[i] + increment < 'A')
-				input[i] = input[i] + 26 + increment;
+		if (input[i] >= 'A'  && input[i] <= 'Z') 		/* Ici commence la prise en compte des majuscules et des minuscules*/
+		{							/*tout en vérifiant que l'appilcation de la fonction césar ne sorte pas*/
+			if (input[i] + increment < 'A')			/*du cadre de l'alphabet si un calcul y est appliqué,*/
+				input[i] = input[i] + 26 + increment;	/*sinon on affiche le caratère est affiché directement et on next.*/
 			else if (input[i] + increment > 'Z')
 				input[i] = input[i] - 26 + increment;
 			else
@@ -34,7 +34,7 @@ char ft_cesar(char* input, int increment)
 	printf("\n");
 	return(0);
 }
-
+/* faible protection du main */
 int main(int argc, char** argv)
 {	
 	if (argc != 3)

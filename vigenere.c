@@ -8,6 +8,7 @@ char ft_vigenere(char* phrase, char* increment)
 	{	
 		char alphabet[27]="abcdefghijklmnopqrstuvwxyz";
 		int i=0, j=0, k=0, l=0;
+		/*Mise tout au minuscule pour ne pas avoir de problèmes de calcul, optimisable pour faire deux en un ?*/
 		for (int min = 0; increment[min]; min++)
 			{
 				increment[min] = tolower(increment[min]);
@@ -28,6 +29,7 @@ char ft_vigenere(char* phrase, char* increment)
 						k++;
 						i++;
 					}
+			/* Ci dessus, comptage de la distance qui sépare la lettre du début de l'alphabet afin d'appliquer 'i' dans la formule ci dessous, et ensuite l'afficher, et passer au caractère suivant si aucun calcul est nécessaire*/
 			if (phrase[j] >= 'a' && phrase[j] <= 'z')
 			{
 				if (phrase[j] + i >'z')
@@ -44,7 +46,7 @@ char ft_vigenere(char* phrase, char* increment)
 		printf("\n");
 		return(0);
 	}
-
+/*le ft_vigenere_inverse reprend exactement la même chose que le vigenère classique, mais, en changeant des signes dans la partie calculatoire afin d'en faire une soustraction et non une addition pour faire le déchiffrage du message. */
 char ft_vigenere_inverse(char* phrase, char* increment)
 	{	
 		char alphabet[27]="abcdefghijklmnopqrstuvwxyz";
@@ -85,6 +87,8 @@ char ft_vigenere_inverse(char* phrase, char* increment)
 		printf("\n");
 		return(0);
 	}
+
+/*Main donnant choix au chiffrage ou déchiffrage du vigenère, faiblement sécurisé.*/
 int main(int argc, char** argv)
 	{
 		int choix = 0;
