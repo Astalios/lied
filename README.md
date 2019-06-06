@@ -12,7 +12,7 @@ Liste des outils :
 - Chiffrement affine
 - Atbash
 - Chiffre de Vigenère
-- Carré de Polybe - *à finir*
+- Carré de Polybe
 - Conversions - *à faire*
 - Analyse fréquentielle
 
@@ -30,7 +30,7 @@ Liste of tools :
 - Affine cipher
 - Atbash
 - Vigenère cipher
-- Polybius square - *WIP*
+- Polybius square
 - Conversions - *not done yet*
 - Frequency analysis
 
