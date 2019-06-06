@@ -12,11 +12,13 @@ Liste des outils :
 - Chiffrement affine
 - Atbash
 - Chiffre de Vigenère
-- Carré de Polybe - *à finir*
+- Carré de Polybe
 - Conversions - *à faire*
 - Analyse fréquentielle
 
 LIED est un projet pour le baccalauréat d'Astalios et naeya. C'est notre premier projet en C, et l'un des objectifs était d'apprendre l'utilisation des différents outils nécessaires à la réalisation du projet.
+
+*nb : Le main n'est absolument pas en état de fonctionner pour les programmes autre que le césar, l'affine, et le vigenère.*
 
 ---
 
@@ -28,9 +30,11 @@ Liste of tools :
 - Affine cipher
 - Atbash
 - Vigenère cipher
-- Polybius square - *WIP*
+- Polybius square
 - Conversions - *not done yet*
 - Frequency analysis
 
 LIED is a highschool project for Astalios and naeya final exam. It's our first C project, and one of the objectives was to learn the usage of the tools needed to realise the project.
+
+*note : the mainLied is actually only working for Caesar, Affine, and the Vigenère.*
 
