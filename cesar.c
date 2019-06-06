@@ -34,3 +34,12 @@ char ft_cesar(char* input, int increment)
 	printf("\n");
 	return(0);
 }
+
+int main(int argc, char** argv)
+{	
+	if (argc != 3)
+		printf("il ne faut rentrer que deux valeurs, la phrase et le chiffre de décalage\n");
+	else	
+		ft_cesar(argv[1], atoi(argv[2]));
+	return(0);
+}

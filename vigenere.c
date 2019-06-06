@@ -85,3 +85,21 @@ char ft_vigenere_inverse(char* phrase, char* increment)
 		printf("\n");
 		return(0);
 	}
+int main(int argc, char** argv)
+	{
+		int choix = 0;
+		if ( argc != 3)
+		printf("il faut renter deux valeurs,la phrase a chiffrer et la phrase qui sert de clef de chiffrage. \n");
+		else 
+		{
+			while (choix != 1 || choix != 2) 
+				printf("1 - Chiffrage \n 2 - Déchiffrage \n Votre choix :");
+				scanf("%d", &choix);
+			if (choix == 1)
+				ft_vigenere(argv[1], argv[2]);
+			else if (choix ==2)
+				ft_vigenere_inverse(argv[1], argv[2]);
+			else 
+				printf("veuillez rentrer 1 ou 2");
+		}
+	}
