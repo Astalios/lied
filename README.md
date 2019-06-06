@@ -18,6 +18,8 @@ Liste des outils :
 
 LIED est un projet pour le baccalauréat d'Astalios et naeya. C'est notre premier projet en C, et l'un des objectifs était d'apprendre l'utilisation des différents outils nécessaires à la réalisation du projet.
 
+*nb : Le main n'est absolument pas en état de fonctionner pour les programmes autre que le césar, l'affine, et le vigenère.*
+
 ---
 
 LIED is a library of programms allowing to crypt and decrypt messages following simple methods. The goal was to have a toolbox to help solving enigmas (for ARGs or geocaching for example).
@@ -33,4 +35,6 @@ Liste of tools :
 - Frequency analysis
 
 LIED is a highschool project for Astalios and naeya final exam. It's our first C project, and one of the objectives was to learn the usage of the tools needed to realise the project.
+
+*note : the mainLied is actually only working for Caesar, Affine, and the Vigenère.*
 
