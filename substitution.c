@@ -3,10 +3,9 @@
 #include <string.h>
 #include <ctype.h>
 
-char substitution (char cipher[], char key1[27], char key2[27], char decipher[])
+char substitution (char* cipher, char* key1, char* key2, char decipher[])
   {
     int a, b, c;
-
     for (a=0; cipher[a] != 0; a++) /*Boucle déplaçant dans le texte en entrée*/
       {
       	c = 0;
@@ -16,7 +15,7 @@ char substitution (char cipher[], char key1[27], char key2[27], char decipher[])
             /*Si le caractère du texte correspond au caractère de la première clé,
              le caractère associé de la seconde clé est ajouté à la sortie*/
               {
-                decipher[a] = key2[b];
+                cipher[a] = key2[b];
                 c = 1;/*Stoppe la boucle pour passer au caractère suivant du texte.*/
 
               }
@@ -24,7 +23,7 @@ char substitution (char cipher[], char key1[27], char key2[27], char decipher[])
              /*Prise en charge des majuscules.
              Il faudrait une option pour le désactiver si la clée comprends les majs*/
              	{
-             		decipher[a] = toupper(key2[b]);
+             		cipher[a] = toupper(key2[b]);
              		c = 1;
              	}
           }
@@ -34,14 +33,13 @@ char substitution (char cipher[], char key1[27], char key2[27], char decipher[])
         caractère de la clé, il est mis tel quel en sortie.
         Cela permet de s'assurer que le texte en sortie soit complet.*/
           {
-             		decipher[a] = cipher[a];
+             		cipher[a] = cipher[a];
              		c = 1;
           }
       }
-    decipher[a] = '\0'; /*Permet de s'assurer que la string est bien terminée*/
-    return(decipher);
+    cipher[a] = '\0'; /*Permet de s'assurer que la string est bien terminée*/
   }
-/*
+
 
 int main(int argc, char *argv[])
   {
@@ -66,4 +64,4 @@ int main(int argc, char *argv[])
 				return 1;
     	}
 
-  }*/
+  }

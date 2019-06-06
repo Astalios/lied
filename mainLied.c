@@ -7,7 +7,7 @@ char ft_cesar(char** input, int increment);
 char ft_vigenere(char** phrase, char** increment);
 char ft_vigenere_inverse(char** phrase, char** increment); 
 char ft_affine(char** clef, int chiffre_a, int chiffre_b);
-char substitution(char** cipher, char** key1, char** key2, char* decipher[]);
+char substitution(char** cipher, char** key1, char** key2/*, char* decipher[]*/);
 
 int main (int argc, char** argv)
 {
@@ -96,7 +96,7 @@ int main (int argc, char** argv)
 							printf("\nVeuillez rentrer la deuxième clef : ");
 							scanf("%s", &phrase_3);
 							printf("ça marche ici avant fonction \n ");
-							substitution(&phrase, &phrase_2, &phrase_3, &output);
+							substitution(&phrase, &phrase_2, &phrase_3/*, &output*/);
 							printf("ça marche ici après fonction \n ");
 							break;
 						}
@@ -104,7 +104,7 @@ int main (int argc, char** argv)
 					{
 							printf("ça marche ici avant fonction \n ");
 
-						substitution(&phrase, &phrase_2, &alphabet, &output);
+							substitution(&phrase, &phrase_2, &alphabet/*, &output*/);
 							printf("ça marche ici apres fonction \n ");
 
 						break;
@@ -112,13 +112,14 @@ int main (int argc, char** argv)
 					else printf("\n Il faut rentrer [1] = oui ou [2] = non.");
 				}
 				printf("test ici pour voir \n");
-				printf("%s\n", &output);
+				//printf("%s\n", &output_2);
 				break;
 			case 5 : // ATBASH
 
 			case 6 : // POLYBE
 
 			case 7 : // CONVERSIONS
+
 
 			case 8 : // ANALYSE FREQUENTIELLE
 
