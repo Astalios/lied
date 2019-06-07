@@ -51,6 +51,6 @@ int main(int argc, char** argv)
 		if ( argc != 4)
 			printf("il faut rentrer trois valeurs, la clef, le nombre 1, et le nombre 2, \n");
 		else 
-			affine(argv[1], atoi(argv[2]), atoi(argv[3]));
+			ft_affine(argv[1], atoi(argv[2]), atoi(argv[3]));
 		return(0);
 		}
