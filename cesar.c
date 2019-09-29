@@ -8,7 +8,7 @@
 char ft_cesar(char* input, int increment)
 {
 	if (increment > 26 || increment < -26)
-		increment = increment %= 26;
+		increment = increment % 26;
 	for (int i = 0; input[i] != '\0'; i++)
 	{
 		if (input[i] >= 'A'  && input[i] <= 'Z') 		/* Ici commence la prise en compte des majuscules et des minuscules*/
