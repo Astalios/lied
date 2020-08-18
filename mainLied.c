@@ -6,7 +6,7 @@
 char ft_cesar(char** input, int increment);
 char ft_vigenere(char** phrase, char** increment);
 char ft_vigenere_inverse(char** phrase, char** increment); 
-char ft_affine(char** clef, int chiffre_a, int chiffre_b);
+char ft_affine(char* clef, int coef, int ordonne);
 char substitution(char** cipher, char** key1, char** key2/*, char* decipher[]*/);
 
 int main (int argc, char** argv)
