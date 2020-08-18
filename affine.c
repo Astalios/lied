@@ -41,10 +41,10 @@ char ft_affine(char* clef, int coef, int ordonne)
 	}
 /* faible sécurisation du main, truc rapide pour compenser le mainLied défectueux.*/
 int main(int argc, char** argv)
-		{
-		if ( argc != 4)
-			printf("il faut rentrer trois valeurs, la clef, le nombre 1, et le nombre 2, \n");
-		else 
-			ft_affine(argv[1], atoi(argv[2]), atoi(argv[3]));
-		return(0);
-		}
+{
+	if ( argc != 4)
+		printf("il faut rentrer trois valeurs, la clef, le nombre 1, et le nombre 2, \n");
+	else
+		ft_affine(argv[1], atoi(argv[2]), atoi(argv[3]));
+	return(0);
+}
