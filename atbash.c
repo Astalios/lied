@@ -4,8 +4,7 @@
 #include <ctype.h>
 
 /*Fonctionne en grande partie comme la substitution*/
-
-char atbash(char cipher[], char key[27], char decipher[])
+void atbash(char cipher[], char key[27], char decipher[])
 	{
 		int a, b, c;
 		int len = strlen(key);

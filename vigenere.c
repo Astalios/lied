@@ -46,6 +46,7 @@ char ft_vigenere(char* phrase, char* increment)
 		printf("\n");
 		return(0);
 	}
+
 /*le ft_vigenere_inverse reprend exactement la même chose que le vigenère classique, mais, en changeant des signes dans la partie calculatoire afin d'en faire une soustraction et non une addition pour faire le déchiffrage du message. */
 char ft_vigenere_inverse(char* phrase, char* increment)
 	{	
