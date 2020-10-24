@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 
-char substitution (char cipher[], char key1[27], char key2[27], char decipher[])
+void substitution (char cipher[], char key1[27], char key2[27], char decipher[])
   {
     int a, b, c;
 
