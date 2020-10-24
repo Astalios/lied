@@ -2,7 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int polybiusC(char input[], char output[])
+void polybiusC(char input[], char output[])
 	{
 		char square[6][6] = {"abcde","fghik","lmnop","qrstu","vwxyz"};
 		int a, b, c, d;

@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int polybiusDecrypt(char input[], char output[])
+void polybiusDecrypt(char input[], char output[])
 	{
 		char square[6][6] = {{'a','b','c','d','e'},
 												 {'f','g','h','i','k'},

@@ -56,7 +56,7 @@ void freq(char cipher[])
       }
   }
 
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
   {
   	if(argc == 2)
   		{
@@ -66,4 +66,5 @@ void main(int argc, char *argv[])
   		{
   			printf("Wrong input !");
   		}
+	return 0;
   }
