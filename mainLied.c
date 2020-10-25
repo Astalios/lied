@@ -6,7 +6,7 @@
 char ft_cesar(char** input, int increment);
 char ft_vigenere(char** phrase, char** increment);
 char ft_vigenere_inverse(char** phrase, char** increment); 
-char ft_affine(char** clef, int chiffre_a, int chiffre_b);
+char ft_affine(char* clef, int coef, int ordonne);
 char substitution(char** cipher, char** key1, char** key2/*, char* decipher[]*/);
 
 int main (int argc, char** argv)
@@ -28,7 +28,7 @@ int main (int argc, char** argv)
 				printf("Le César consiste à faire un décalage de la lettre vers la fin ou vers le début de l'alphabet en fonction de la valeur de décalage. \n Par exemple si l'on applique un decalage de 5 a la lettre 'B', en considérant que la position de 'A' = 0, alors 'B' = 1, donc 1 + 5 = 6. \n La lettre en position 6 est la lettre 'G'. \n De même, il est possible d'y appliquer une valeur negative a la valeur de décalage pour remonter vers le debut de l'alphabet : \n 'Z' = 25; appliquons un décalage de -5 et la lettre obtenue est la lettre 'U'. \n");
 				sleep(1);
 				printf("Tapez votre phrase : ");
-				scanf("%s", &phrase);
+				scanf("%s", phrase);
 				printf("\nTapez la valeur de décalage : ");
 				scanf("%d", &clef_chiffre_1);
 				printf(" \n ");
@@ -76,7 +76,7 @@ int main (int argc, char** argv)
 				scanf("%d", &clef_chiffre_1);
 				printf("\n Tapez le deuxième chiffre : ");
 				scanf("%d", &clef_chiffre_2);
-				ft_affine(&phrase, clef_chiffre_1, clef_chiffre_2);
+				ft_affine(phrase, clef_chiffre_1, clef_chiffre_2);
 				break;
 
 			case 4 : // SUBSTITUTION

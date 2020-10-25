@@ -38,24 +38,24 @@ void atbash(char cipher[], char key[27], char decipher[])
 	}
 
 int main(int argc, char *argv[])
-	{
-		if(argc == 2)
-			{
-				char output[strlen(argv[1])+1];
-				atbash(argv[1], "abcdefghijklmnopqrstuvwxyz", output);
-				printf("%s\n", output);
-				return 0;
-			}
-		else if(argc == 3)
-			{
-				char output[strlen(argv[1])+1];
-				atbash(argv[1], argv[2], output);
-				printf("%s\n", output);
-				return 0;
-			}
-		else
-			{
-				printf("Wrong input !\n");
-				return 1;
-			}
-	}
+{
+	if(argc == 2)
+		{
+			char output[strlen(argv[1])+1];
+			atbash(argv[1], "abcdefghijklmnopqrstuvwxyz", output);
+			printf("%s\n", output);
+			return 0;
+		}
+	else if(argc == 3)
+		{
+			char output[strlen(argv[1])+1];
+			atbash(argv[1], argv[2], output);
+			printf("%s\n", output);
+			return 0;
+		}
+	else
+		{
+			printf("Wrong input !\n");
+			return 1;
+		}
+}
