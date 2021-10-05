@@ -4,7 +4,7 @@
 
 ![screen](lied.png)
 
-LIED est une librairie de programmes permettant de crypter et décrypter des messages selon des méthodes simples. L'objectif est d'avoir à disposition une boite à outils pour résoudre des énigmes (pour des ARGs ou du geocaching par exemple). 
+LIED est une librairie de programmes permettant de Chiffrer et Dechiffrer des messages selon des méthodes simples. L'objectif est d'avoir à disposition une boite à outils pour résoudre des énigmes (pour des ARGs ou du geocaching par exemple). 
 
 Liste des outils :
 - Code César
@@ -22,7 +22,7 @@ LIED est un projet pour le baccalauréat d'Astalios et naeya. C'est notre premie
 
 ---
 
-LIED is a library of programms allowing to crypt and decrypt messages following simple methods. The goal was to have a toolbox to help solving enigmas (for ARGs or geocaching for example).
+LIED is a library of programms allowing to encrypt and decrypt messages following simple methods. The goal was to have a toolbox to help solving enigmas (for ARGs or geocaching for example).
 
 Liste of tools :
 - Caesar cipher
